@@ -1,0 +1,122 @@
+/* src/index.css */
+@import "tailwindcss";
+
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap");
+
+:root {
+  --primary: #00ff41;
+  --bg: #050505;
+  --panel: #0d0d0d;
+}
+
+body {
+  background-color: var(--bg);
+  color: white;
+  font-family: "JetBrains Mono", monospace;
+  overflow-x: hidden;
+}
+
+/* --- STRUCTURE BENTO / INDUSTRIAL --- */
+
+.cyber-panel {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--panel);
+  position: relative;
+  transition: all 0.3s ease;
+  overflow: hidden; /* Important pour que la scan-line ne dépasse pas */
+
+  /* Effet de coins coupés (clip-path) pour le look Cyber */
+  clip-path: polygon(
+    0 0,
+    calc(100% - 15px) 0,
+    100% 15px,
+    100% 100%,
+    15px 100%,
+    0 calc(100% - 15px)
+  );
+}
+
+/* Les petits coins en accent vert */
+.cyber-panel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  border-top: 2px solid var(--primary);
+  border-left: 2px solid var(--primary);
+  opacity: 0.5;
+  z-index: 10;
+}
+
+.cyber-panel:hover {
+  border-color: rgba(0, 255, 65, 0.4);
+  background: #111111;
+  transform: translateY(-2px); /* Petit saut pour le dynamisme */
+}
+
+/* --- ANIMATIONS DE SCAN --- */
+
+@keyframes scan-move {
+  0% {
+    top: -100%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+.scan-line {
+  height: 40%;
+  width: 100%;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--primary),
+    transparent
+  );
+  opacity: 0; /* Invisible par défaut */
+  position: absolute;
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* La scan-line s'active au survol du parent */
+.cyber-panel:hover .scan-line {
+  opacity: 0.15;
+  animation: scan-move 2s linear infinite;
+}
+
+/* --- UTILS --- */
+.text-cyber-primary {
+  color: var(--primary);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Texture de bruit */
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 50; /* Par dessus tout pour l'effet de texture */
+  filter: contrast(150%) brightness(100%);
+}
+
+/* Effet de lueur sur le texte primaire */
+.glow-text {
+  text-shadow: 0 0 10px rgba(0, 255, 65, 0.3);
+}
+
+.cyber-panel h4 {
+  transition: text-shadow 0.3s ease;
+}
+.cyber-panel:hover h4 {
+  text-shadow: 0 0 8px var(--primary);
+  color: white;
+}
