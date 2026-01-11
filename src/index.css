@@ -1,31 +1,42 @@
 /* src/index.css */
 @import "tailwindcss";
-
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap");
 
 :root {
   --primary: #00ff41;
+  /* Couleurs par défaut (Dark) */
   --bg: #050505;
   --panel: #0d0d0d;
+  --text: #ffffff;
+  --text-muted: #9ca3af; /* gray-400 */
+  --border: rgba(255, 255, 255, 0.1);
+}
+
+/* --- CLASSE LIGHT MODE --- */
+.light-mode {
+  --bg: #f5f5f7;
+  --panel: #ffffff;
+  --text: #1a1a1a;
+  --text-muted: #4b5563; /* gray-600 */
+  --border: rgba(0, 0, 0, 0.1);
+  --primary: #008f26; /* Un vert un peu plus sombre pour la lisibilité sur fond blanc */
 }
 
 body {
   background-color: var(--bg);
-  color: white;
+  color: var(--text);
   font-family: "JetBrains Mono", monospace;
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* --- STRUCTURE BENTO / INDUSTRIAL --- */
-
 .cyber-panel {
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border);
   background: var(--panel);
   position: relative;
   transition: all 0.3s ease;
-  overflow: hidden; /* Important pour que la scan-line ne dépasse pas */
-
-  /* Effet de coins coupés (clip-path) pour le look Cyber */
+  overflow: hidden;
   clip-path: polygon(
     0 0,
     calc(100% - 15px) 0,
@@ -36,104 +47,44 @@ body {
   );
 }
 
-/* Les petits coins en accent vert */
-.cyber-panel::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 15px;
-  height: 15px;
-  border-top: 2px solid var(--primary);
-  border-left: 2px solid var(--primary);
-  opacity: 0.5;
-  z-index: 10;
-}
-
 .cyber-panel:hover {
-  border-color: rgba(0, 255, 65, 0.4);
-  background: #111111;
-  transform: translateY(-2px); /* Petit saut pour le dynamisme */
-}
-
-/* --- ANIMATIONS DE SCAN --- */
-
-@keyframes scan-move {
-  0% {
-    top: -100%;
-  }
-  100% {
-    top: 100%;
-  }
-}
-
-.scan-line {
-  height: 40%;
-  width: 100%;
-  background: linear-gradient(
-    to bottom,
-    transparent,
-    var(--primary),
-    transparent
-  );
-  opacity: 0; /* Invisible par défaut */
-  position: absolute;
-  pointer-events: none;
-  z-index: 5;
-}
-
-/* La scan-line s'active au survol du parent */
-.cyber-panel:hover .scan-line {
-  opacity: 0.15;
-  animation: scan-move 2s linear infinite;
+  border-color: var(--primary);
+  background: var(--panel);
+  filter: brightness(1.05);
+  transform: translateY(-2px);
 }
 
 /* --- UTILS --- */
 .text-cyber-primary {
   color: var(--primary);
 }
-
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  /* Texture de bruit */
-  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
-  opacity: 0.04;
-  pointer-events: none;
-  z-index: 50; /* Par dessus tout pour l'effet de texture */
-  filter: contrast(150%) brightness(100%);
-}
-
-/* Effet de lueur sur le texte primaire */
-.glow-text {
-  text-shadow: 0 0 10px rgba(0, 255, 65, 0.3);
-}
-
-.cyber-panel h4 {
-  transition: text-shadow 0.3s ease;
-}
-.cyber-panel:hover h4 {
-  text-shadow: 0 0 8px var(--primary);
-  color: white;
-}
-
-/* Cette classe s'appliquera à tous tes grands titres de section */
 .section-title {
-  /* clamp(min, actuel, max) : Le titre fera entre 2.5rem et 6rem selon la taille de l'écran */
-  font-size: clamp(0.5rem, 6vw, 3rem);
+  font-size: clamp(1.5rem, 6vw, 3rem); /* Ajusté le min de 0.5rem à 1.5rem */
   font-weight: 900;
   text-transform: uppercase;
   font-style: italic;
   line-height: 0.9;
   letter-spacing: -0.05em;
+  color: var(--text);
 }
 
-/* Applique cette classe aussi à ton Hero Title pour être tranquille */
 .hero-title {
   font-size: clamp(3.5rem, 12vw, 9rem);
   line-height: 0.85;
+  color: var(--text);
+}
+
+/* Texture de bruit adaptative */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+  opacity: 0.04;
+  pointer-events: none;
+  filter: contrast(150%) brightness(100%);
+}
+
+#root {
+  position: relative;
 }
