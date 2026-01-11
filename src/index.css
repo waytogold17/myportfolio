@@ -120,3 +120,20 @@ body::before {
   text-shadow: 0 0 8px var(--primary);
   color: white;
 }
+
+/* Cette classe s'appliquera à tous tes grands titres de section */
+.section-title {
+  /* clamp(min, actuel, max) : Le titre fera entre 2.5rem et 6rem selon la taille de l'écran */
+  font-size: clamp(0.5rem, 6vw, 3rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  font-style: italic;
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+}
+
+/* Applique cette classe aussi à ton Hero Title pour être tranquille */
+.hero-title {
+  font-size: clamp(3.5rem, 12vw, 9rem);
+  line-height: 0.85;
+}

@@ -30,7 +30,7 @@ const ManifestoItem = ({ number, title, text, citation }) => {
 
 export const Manifesto = () => {
   return (
-    <section className="py-32 relative overflow-hidden">
+    <section id="whyme" className="py-32 relative overflow-hidden">
       {/* Fond décoratif subtil pour cette section */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(0,255,65,0.03)_0%,transparent_70%)] pointer-events-none" />
 
@@ -40,10 +40,10 @@ export const Manifesto = () => {
           whileInView={{ opacity: 1, y: 0 }}
           className="text-center mb-20"
         >
-          <h2 className="text-xs font-mono text-cyber-primary tracking-[0.5em] uppercase mb-4">
+          <h2 className=" text-xs font-mono text-cyber-primary tracking-[0.5em] uppercase mb-4">
             // Mes Valeurs
           </h2>
-          <div className="text-3xl font-black uppercase italic">
+          <div className="section-title text-3xl font-black uppercase italic">
             Pourquoi me recruter ?
           </div>
         </motion.div>

@@ -44,7 +44,7 @@ export const Skills = () => {
         <h2 className="text-xs font-mono text-cyber-primary tracking-[0.5em] uppercase mb-4">
           // MA STACK TECHNIQUE
         </h2>
-        <div className="text-4xl font-black uppercase italic">
+        <div className="section-title text-4xl font-black uppercase italic">
           Compétences_Techniques
         </div>
       </div>

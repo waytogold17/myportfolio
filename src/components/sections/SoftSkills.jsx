@@ -28,7 +28,7 @@ export const SoftSkills = () => {
     <section className="py-16 px-6 max-w-7xl mx-auto">
       <div className="flex items-center gap-4 mb-12">
         <Terminal className="text-cyber-primary" />
-        <h2 className="text-3xl font-black uppercase tracking-tighter">
+        <h2 className="section-title text-3xl font-black uppercase tracking-tighter">
           Soft Skills_Log
         </h2>
         <div className="h-[1px] flex-1 bg-white/10"></div>
