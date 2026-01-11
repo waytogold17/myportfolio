@@ -19,7 +19,7 @@
   --text: #1a1a1a;
   --text-muted: #4b5563; /* gray-600 */
   --border: rgba(0, 0, 0, 0.1);
-  --primary: #008f26; /* Un vert un peu plus sombre pour la lisibilité sur fond blanc */
+  --primary: #104d1e; /* Un vert un peu plus sombre pour la lisibilité sur fond blanc */
 }
 
 body {

@@ -14,6 +14,7 @@ import myLogo from "./assets/mylogocyber2.png";
 import { useEffect } from "react";
 import { MobileMenu } from "./components/ui/MobileMenu";
 import { useApp } from "./context/AppContext";
+import { Footer } from "./components/sections/footer";
 
 const navContent = {
   FR: {
@@ -159,14 +160,15 @@ function App() {
       {/* CONTENU PRINCIPAL */}
       <main className="relative z-10 w-full overflow-x-hidden pt-20">
         <Hero />
+        <WhoAmI />
         <Skills />
         <ProjectModule />
         <Certifications />
         <Experience />
-        <WhoAmI />
         <SoftSkills />
         <Manifesto />
         <Contact />
+        <Footer />
       </main>
     </MainLayout>
   );

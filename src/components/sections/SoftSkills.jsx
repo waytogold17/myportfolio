@@ -8,8 +8,8 @@ const content = {
     subtitle: "// COMPÉTENCES_COMPORTEMENTALES",
     traits: [
       {
-        title: "Intelligence Émotionnelle",
-        desc: "Spontanéité couplée à une subtilité contextuelle. Capacité d'intégration rapide.",
+        title: "Écoute active",
+        desc: "Abilité à observer et à comprendre l'atmosphère et le ressenti des collaborateurs. Capacité d'intégration rapide.",
         icon: Heart,
       },
       {
@@ -19,7 +19,7 @@ const content = {
       },
       {
         title: "Éthique & Déontologie",
-        desc: "Moralité inébranlable face à la tentation. Respect strict de la confidentialité.",
+        desc: "Moralité adaptée à la réalité des opérations couplée à un respect strict de la confidentialité.",
         icon: ShieldAlert,
       },
       {
@@ -34,8 +34,8 @@ const content = {
     subtitle: "// BEHAVIORAL_COMPETENCIES",
     traits: [
       {
-        title: "Emotional Intelligence",
-        desc: "Spontaneity coupled with contextual subtlety. Rapid integration capability.",
+        title: "Active Listening",
+        desc: "Ability to observe and understand the atmosphere and feelings of colleagues. Rapid integration capability.",
         icon: Heart,
       },
       {
@@ -45,7 +45,7 @@ const content = {
       },
       {
         title: "Ethics & Deontology",
-        desc: "Unyielding morality against temptation. Strict confidentiality respect.",
+        desc: "Morality suited to the reality of operations coupled with strict confidentiality respect.",
         icon: ShieldAlert,
       },
       {

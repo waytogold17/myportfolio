@@ -22,10 +22,11 @@ const projectIcons = {
 
 const content = {
   FR: {
-    subtitle: "// DÉPÔTS_PROJETS",
-    title: "Opérations_Majeures",
-    btn: "TÉLÉCHARGER_LOGS_PDF",
-    archive: "-- ACCÉDER À L'ARCHIVE COMPLÈTE --",
+    subtitle: "// Mes meilleures réalisations",
+    title: "Projets_Majeures",
+    btn: "TÉLÉCHARGER_L'ARCHIVE_COMPLETE_DES_PROJETS_PDF",
+    archive:
+      "-- ACCÉDER À L'ARCHIVE COMPLÈTE EN CLIQUANT SUR LE BOUTON CI DESSUS  --",
     projects: [
       {
         id: "PRJ-01",
@@ -58,7 +59,7 @@ const content = {
       {
         id: "PRJ-05",
         category: "INDUSTRIAL",
-        title: "Trieur_Billes_Intelligent",
+        title: "Trieur_Balles_Smart",
         desc: "Système embarqué avec vision réelle, backend Node.js et dashboard temps réel.",
         tech: ["Node.js", "Raspberry Pi", "AJAX"],
       },
@@ -72,9 +73,9 @@ const content = {
     ],
   },
   EN: {
-    subtitle: "// PROJECT_DEPOSITS",
-    title: "Major_Operations",
-    btn: "DOWNLOAD_FULL_LOGS_PDF",
+    subtitle: "// My Best Achievements",
+    title: "Major_Projects",
+    btn: "DOWNLOAD_COMPLETE_PROJECTS_PRESENTATION_PDF",
     archive: "-- ACCESS FULL ARCHIVE --",
     projects: [
       {
@@ -140,17 +141,6 @@ export const ProjectModule = () => {
             {t.title}
           </div>
         </div>
-        <a
-          href="/Portfolio-de-Projets-en-Cybersecurite.pdf"
-          download="Portfolio-de-Projets-en-Cybersecurite_new.pdf"
-          className={`flex items-center justify-center gap-2 px-6 py-3 font-black text-xs transition-all shadow-lg no-underline ${
-            isLight
-              ? "bg-black text-white hover:bg-cyber-primary hover:shadow-cyber-glow"
-              : "bg-white text-black hover:bg-cyber-primary hover:shadow-cyber-glow"
-          }`}
-        >
-          {t.btn} <Download size={14} />
-        </a>
       </div>
 
       {/* GRID DES PROJETS */}
@@ -216,6 +206,17 @@ export const ProjectModule = () => {
           {t.archive}
         </p>
       </div>
+      <a
+        href="/Portfolio-de-Projets-en-Cybersecurite.pdf"
+        download="Portfolio-de-Projets-en-Cybersecurite_new.pdf"
+        className={`flex items-center justify-center gap-2 px-6 py-3 font-black text-xs transition-all shadow-lg no-underline ${
+          isLight
+            ? "bg-black text-white hover:bg-cyber-primary hover:shadow-cyber-glow"
+            : "bg-white text-black hover:bg-cyber-primary hover:shadow-cyber-glow"
+        }`}
+      >
+        {t.btn} <Download size={14} />
+      </a>
     </section>
   );
 };

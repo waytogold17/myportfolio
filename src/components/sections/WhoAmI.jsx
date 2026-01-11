@@ -5,10 +5,10 @@ import { useApp } from "../../context/AppContext";
 const content = {
   FR: {
     id: "// NOYAU_IDENTITÉ",
-    name: "Joseph Gomez",
+    name: "A PROPOS DE MOI",
     desc: "Étudiant expert en Cybersécurité. Polyvalent, orienté réseau & développement.",
     status: "STATUT: DISPONIBLE",
-    timelineTitle: "Execution_Path.log",
+    timelineTitle: "Parcours_Académique_log",
     timeline: [
       {
         date: "2023 - PRESENT",
@@ -34,10 +34,10 @@ const content = {
   },
   EN: {
     id: "// IDENTITY_CORE",
-    name: "Joseph Gomez",
+    name: "ABOUT ME",
     desc: "Cybersecurity student expert. Versatile, network & development oriented.",
     status: "STATUS: OPEN_TO_WORK",
-    timelineTitle: "Execution_Path.log",
+    timelineTitle: "Studies_log",
     timeline: [
       {
         date: "2023 - PRESENT",
@@ -107,7 +107,7 @@ export const WhoAmI = () => {
         {/* COLONNE DROITE: TIMELINE DYNAMIQUE */}
         <div className="col-span-12 md:col-span-8 space-y-4">
           <h2
-            className="text-xs font-mono mb-6 uppercase tracking-[0.3em]"
+            className="section-title text-xs font-mono mb-6 uppercase tracking-[0.3em]"
             style={{ color: "var(--text-muted)" }} // ✅ var(--text-muted)
           >
             {t.timelineTitle} {/* ✅ DYNAMIQUE */}

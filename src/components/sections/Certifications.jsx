@@ -54,24 +54,29 @@ export const Certifications = () => {
   return (
     <section id="certifications" className="py-24 px-6 max-w-7xl mx-auto">
       {/* Header avec ligne adaptative */}
-      <div className="flex items-center gap-4 mb-16">
-        <Award className="text-cyber-primary" />
+      <div className="flex flex-col mb-12">
+        {/* LE STATUS : Toujours en haut, prend toute la largeur */}
+        <div className="overflow-hidden mb-2">
+          <motion.span
+            initial={{ opacity: 0, x: -10 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            className="text-[10px] md:text-xs font-mono text-cyber-primary uppercase tracking-[0.2em] block whitespace-nowrap"
+          >
+            <span className="opacity-50 inline-block mr-2">{">"}</span>
+            {t.status}
+          </motion.span>
+        </div>
+
+        {/* LE TITRE : Juste en dessous */}
         <h2
-          className="section-title text-3xl font-black uppercase"
+          className="section-title text-3xl md:text-5xl font-black italic uppercase leading-none"
           style={{ color: "var(--text)" }}
         >
           {t.title}
         </h2>
-        <div
-          className="h-[1px] flex-1 opacity-20"
-          style={{ backgroundColor: "var(--text)" }}
-        ></div>
-        <span
-          className="font-mono text-[10px] opacity-50"
-          style={{ color: "var(--text)" }}
-        >
-          {t.status}
-        </span>
+
+        {/* LIGNE DÉCORATIVE (Optionnel mais aide à la séparation) */}
+        <div className="w-20 h-1 bg-cyber-primary mt-4 opacity-50" />
       </div>
 
       {/* Grid des Certifications */}

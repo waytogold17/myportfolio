@@ -122,18 +122,25 @@ export const Experience = () => {
               key={i}
               onClick={() => setActiveTab(i)}
               className={`px-6 py-4 text-left border-l-2 font-mono text-sm transition-all whitespace-nowrap
-                ${
-                  activeTab === i
-                    ? "border-cyber-primary bg-cyber-primary/5 text-cyber-primary font-bold"
-                    : "border-transparent opacity-50 hover:opacity-100"
-                }`}
+      ${
+        activeTab === i
+          ? "border-cyber-primary bg-cyber-primary/10 text-cyber-primary font-black"
+          : "border-transparent hover:border-cyber-primary/30"
+      }`}
               style={{
+                // ✅ FORCE LE TEXTE À ÊTRE LISIBLE QUAND IL N'EST PAS SÉLECTIONNÉ
                 color:
                   activeTab === i
-                    ? "var(--cyber-primary)"
-                    : "var(--text-muted)",
+                    ? "var(--primary)"
+                    : isLight
+                    ? "#444444"
+                    : "var(--text-muted)", // Gris foncé en light mode
                 backgroundColor:
-                  activeTab === i ? "rgba(0, 255, 65, 0.05)" : "transparent",
+                  activeTab === i
+                    ? isLight
+                      ? "rgba(0, 138, 32, 0.1)"
+                      : "rgba(0, 255, 65, 0.05)"
+                    : "transparent",
               }}
             >
               {job.company}
