@@ -8,14 +8,14 @@ const content = {
     boot: "Initialisation du protocole d'embarquement...",
     title: "EXPERT",
     subtitle: "CYBER",
-    name: "Joseph GOMEZ",
+    name: "Joseph GOMEZ ",
     desc: "Passionné par la cybersécurité et la technologie. Expertise ciblée en sécurité réseau, analyse malware et développement sécurisé.",
   },
   EN: {
     boot: "Initializing onboarding protocol...",
     title: "CYBER",
     subtitle: "EXPERT",
-    name: "Joseph GOMEZ",
+    name: "Joseph GOMEZ ",
     desc: "Cybersecurity and technology enthusiast. Focused expertise in network security, malware analysis, and secure development.",
   },
 };
@@ -52,7 +52,8 @@ export const Hero = () => {
           className="font-mono text-xs md:text-sm leading-relaxed"
           style={{ color: "var(--text-muted)" }}
         >
-          {lang === "FR" ? "Je me nomme " : "I am "}
+          {lang === "FR" ? "Je m'appelle " : "I'm"}
+          {"  "}
           <span className="font-bold" style={{ color: "var(--text)" }}>
             {t.name}
           </span>

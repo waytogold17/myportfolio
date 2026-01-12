@@ -5,52 +5,52 @@ import { useApp } from "../../context/AppContext"; // ✅ AJOUTÉ
 const content = {
   FR: {
     title: "Soft_Skills_Log",
-    subtitle: "// COMPÉTENCES_COMPORTEMENTALES",
+    subtitle: "//CE_QUI_NE_S'APPREND_PAS_DANS_LES_LIVRES",
     traits: [
       {
         title: "Écoute active",
-        desc: "Abilité à observer et à comprendre l'atmosphère et le ressenti des collaborateurs. Capacité d'intégration rapide.",
+        desc: "J'ai une facilité à interagir avec plusieurs parties , me permettant plus loin de m’adapter rapidement à de nouveaux environnements.",
         icon: Heart,
       },
       {
         title: "Sang-Froid",
-        desc: "Gestion d'incidents et résilience face aux situations critiques ou conflictuelles.",
+        desc: "Malgré les urgences soudaines ou les imprévus ,je préfère agir de manière pragmatique  plutôt qu'avec  précipitation..",
         icon: Zap,
       },
       {
-        title: "Éthique & Déontologie",
-        desc: "Moralité adaptée à la réalité des opérations couplée à un respect strict de la confidentialité.",
+        title: "Éthique & confiance",
+        desc: "La confiance est ma base de travail. Manipuler des données sensibles demande bien une honnêteté absolue et une discrétion à toute épreuve.",
         icon: ShieldAlert,
       },
       {
-        title: "Curiosité Culturelle",
-        desc: "Inspiré par la culture asiatique et le sport pour une créativité constante.",
+        title: "Curiosité naturelle",
+        desc: "Je suis assez motivé par l'envie d'apprendre de nouvelles choses . Que ce soit une nouvelle techno ou une culture différente, je cherche toujours l'étincelle qui booste la créativit",
         icon: Brain,
       },
     ],
   },
   EN: {
     title: "Soft_Skills_Log",
-    subtitle: "// BEHAVIORAL_COMPETENCIES",
+    subtitle: "//THINGS_YOU_CAN'T_LEARN_FROM_BOOKS",
     traits: [
       {
         title: "Active Listening",
-        desc: "Ability to observe and understand the atmosphere and feelings of colleagues. Rapid integration capability.",
+        desc: "I have a knack for interacting with multiple parties, allowing me to quickly adapt to new environments.",
         icon: Heart,
       },
       {
         title: "Cool Under Pressure",
-        desc: "Incident management and resilience in critical or conflict situations.",
+        desc: "Despite sudden emergencies or unforeseen events ,I prefer to act pragmatically  rather than  hastily.",
         icon: Zap,
       },
       {
-        title: "Ethics & Deontology",
-        desc: "Morality suited to the reality of operations coupled with strict confidentiality respect.",
+        title: "Ethics & Trust",
+        desc: "Trust is the foundation of my work. Handling sensitive data requires absolute honesty and unwavering discretion.",
         icon: ShieldAlert,
       },
       {
         title: "Cultural Curiosity",
-        desc: "Inspired by Asian culture and sports for constant creativity.",
+        desc: "I am highly motivated by the desire to learn new things. Whether it's a new technology or a different culture, I am always looking for that spark that boosts creativity",
         icon: Brain,
       },
     ],
@@ -64,15 +64,24 @@ export const SoftSkills = () => {
   return (
     <section className="py-24 px-6 max-w-7xl mx-auto">
       {/* Header DYNAMIQUE */}
-      <div className="flex items-center gap-4 mb-16">
-        <Terminal className="w-8 h-8 text-cyber-primary" />
-        <h2
-          className="section-title text-3xl font-black uppercase tracking-tighter"
-          style={{ color: "var(--text)" }}
-        >
-          {t.title} {/* ✅ DYNAMIQUE */}
-        </h2>
-        <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+      <div className="flex flex-col md:flex-row md:items-end gap-4 mb-16 border-b border-white/10 pb-6">
+        <div className="flex items-center gap-4">
+          <Terminal className="w-8 h-8 text-cyber-primary" />
+          <div className="flex flex-col">
+            <h2 className="text-xs font-mono text-cyber-primary uppercase tracking-[0.3em] mb-1">
+              {t.subtitle}
+            </h2>
+            <h2
+              className="section-title text-3xl md:text-5xl font-black uppercase tracking-tighter"
+              style={{ color: "var(--text)" }}
+            >
+              {t.title}
+            </h2>
+          </div>
+        </div>
+
+        {/* Cette ligne décorative ne s'affichera que sur PC pour éviter de charger le mobile */}
+        <div className="hidden md:block h-[1px] flex-1 bg-gradient-to-r from-cyber-primary/20 via-transparent to-transparent ml-4 mb-2"></div>
       </div>
 
       {/* Grille DYNAMIQUE */}

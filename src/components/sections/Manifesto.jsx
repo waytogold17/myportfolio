@@ -9,18 +9,18 @@ const content = {
     values: [
       {
         number: "01",
-        title: "Dualité Technique",
-        text: "L'alliance du Réseau, du Développement et de la Cybersécurité offensive pour une vision 360° des menaces.",
+        title: "Ma Dualité Technique",
+        text: "L'alliance du Réseau, du Développement et de la cybersécurité offensive pour accomplir des projets plus que complexes.",
       },
       {
         number: "02",
-        title: "Équilibre Humain",
-        text: "Un esprit sain dans un corps sain. Le sport et la culture geek comme moteurs d'endurance et d'imagination.",
+        title: "Mes passions quotidiennes",
+        text: "Le sport (précisement de la musculation) et la culture geek (mangas et animés) boostent mon imagination mais aussi ma maitrise de soi .",
       },
       {
         number: "03",
-        title: "Éthique Intègre",
-        text: "La déontologie avant l'opportunisme. Une loyauté et une moralité bâties sur un engagement professionnel strict.",
+        title: "Travailler avec Intégrité",
+        text: "Faire les choses correctement, être fiable et respecter ses engagements : c’est ma base au quotidien.",
       },
     ],
     quote:
@@ -34,17 +34,17 @@ const content = {
       {
         number: "01",
         title: "Technical Duality",
-        text: "Blending Network, Development and offensive Cybersecurity for a 360° threat vision.",
+        text: "Blending Network, Development and offensive Cybersecurity to achieve highly complex projects.",
       },
       {
         number: "02",
-        title: "Human Balance",
-        text: "Healthy mind in a healthy body. Sports and geek culture as drivers of endurance and imagination.",
+        title: "My Daily Passions",
+        text: "Sports (especially weight training) and geek culture (mangas and anime) fuel my imagination and self-control.",
       },
       {
         number: "03",
-        title: "Integrity & Ethics",
-        text: "Deontology before opportunism. Loyalty and morality built on strict professional commitment.",
+        title: "Integrity at Work",
+        text: "Doing things right, being reliable and honoring commitments: it's my daily foundation.",
       },
     ],
     quote:
