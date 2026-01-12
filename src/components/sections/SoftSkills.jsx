@@ -5,7 +5,7 @@ import { useApp } from "../../context/AppContext"; // ✅ AJOUTÉ
 const content = {
   FR: {
     title: "Soft_Skills_Log",
-    subtitle: "//CE_QUI_NE_S'APPREND_PAS_DANS_LES_LIVRES",
+    subtitle: "// DERRIERE LA CYBER ET LE GEEK",
     traits: [
       {
         title: "Écoute active",
@@ -31,7 +31,7 @@ const content = {
   },
   EN: {
     title: "Soft_Skills_Log",
-    subtitle: "//THINGS_YOU_CAN'T_LEARN_FROM_BOOKS",
+    subtitle: "// BEHIND CYBER & GEEK",
     traits: [
       {
         title: "Active Listening",
