@@ -5,7 +5,7 @@ import { useApp } from "../../context/AppContext";
 const content = {
   FR: {
     subtitle: "// Mes Valeurs",
-    title: "Pourquoi me recruter ?",
+    title: "Pourquoi collaborer avec moi ?",
     values: [
       {
         number: "01",
@@ -29,7 +29,7 @@ const content = {
   },
   EN: {
     subtitle: "// Core Values",
-    title: "Why recruit me?",
+    title: "Why work with me?",
     values: [
       {
         number: "01",

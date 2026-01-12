@@ -126,18 +126,20 @@ function App() {
               onClick={toggleTheme}
               className="text-cyber-primary text-[10px] uppercase font-black hover:opacity-70 transition-opacity"
             >
-              {isLight ? "[ DARK_UI ]" : "[ LIGHT_UI ]"}
+              {isLight ? "[ LIGHT_UI ]" : "[ DARK_UI ]"}
             </button>
+
             <div
               className="w-[1px] h-3"
               style={{ backgroundColor: "var(--border)" }}
             />
+
             <button
               onClick={() => toggleLang(lang === "FR" ? "EN" : "FR")}
               className="text-[10px] font-mono hover:text-cyber-primary transition-colors"
               style={{ color: "var(--text)" }}
             >
-              {lang === "FR" ? "EN" : "FR"}
+              {lang === "FR" ? "FR" : "EN"}
             </button>
           </div>
 
@@ -149,7 +151,7 @@ function App() {
               borderLeftColor: "var(--border)",
             }}
           >
-            [ AUTH_USER: GOMEZ_J ]<br />[ STATUS: {t.status} ]
+            [ AUTH_USER: JOYBOY_GUESTS ]<br />[ STATUS: {t.status} ]
           </div>
         </div>
 

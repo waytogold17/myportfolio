@@ -1,45 +1,42 @@
-import React, { useState, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { Volume2, VolumeX } from "lucide-react";
 import { useApp } from "../../context/AppContext";
 
 const content = {
-  FR: {
-    signal: "Signal: Stable",
-    stream: "Audio_Flux: ",
-  },
-  EN: {
-    signal: "Signal: Stable",
-    stream: "Audio_Stream: ",
-  },
+  FR: { signal: "Signal: Stable", stream: "Audio_Flux: " },
+  EN: { signal: "Signal: Stable", stream: "Audio_Stream: " },
 };
 
 export const CyberAudio = () => {
-  const { lang, isLight } = useApp();
-  const [isPlaying, setIsPlaying] = useState(false);
-  const t = content[lang] || content.EN;
+  // On utilise isMuted et toggleMute du contexte global
+  const { lang, isLight, isMuted, toggleMute } = useApp();
+  const t = content[lang] || content.FR;
+  const audioRef = useRef(
+    new Audio("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3")
+  );
 
-  // On utilise une référence pour l'objet Audio afin d'éviter de le recréer à chaque render
-  const audioRef = useRef(null);
+  useEffect(() => {
+    const audio = audioRef.current;
+    audio.loop = true;
 
-  const toggle = () => {
-    if (!audioRef.current) {
-      audioRef.current = new Audio(
-        "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3"
-      );
-      audioRef.current.loop = true;
+    // Si isMuted est false (donc son ON par défaut), on essaie de jouer
+    if (!isMuted) {
+      audio.play().catch(() => {
+        console.log("Autoplay bloqué par le navigateur : attente interaction.");
+      });
     }
 
-    if (isPlaying) {
+    return () => audio.pause();
+  }, []);
+
+  // Synchronisation de l'audio quand isMuted change via le bouton
+  useEffect(() => {
+    if (isMuted) {
       audioRef.current.pause();
     } else {
-      audioRef.current
-        .play()
-        .catch((err) =>
-          console.log("L'interaction utilisateur est requise pour l'audio")
-        );
+      audioRef.current.play().catch(() => {});
     }
-    setIsPlaying(!isPlaying);
-  };
+  }, [isMuted]);
 
   return (
     <div
@@ -48,29 +45,29 @@ export const CyberAudio = () => {
         backgroundColor: isLight
           ? "rgba(255, 255, 255, 0.85)"
           : "rgba(5, 5, 5, 0.85)",
-        borderColor: "var(--cyber-primary)",
-        color: isLight ? "#008f11" : "var(--cyber-primary)", // Vert plus sombre en Light pour le contraste
+        borderColor: "var(--primary)", // Utilise ta variable CSS
       }}
     >
-      <div className="flex flex-col items-end uppercase leading-tight">
+      <div
+        className="flex flex-col items-end uppercase leading-tight"
+        style={{ color: "var(--primary)" }}
+      >
         <span className="opacity-70">{t.signal}</span>
-        <span className={isPlaying ? "animate-pulse font-bold" : "opacity-30"}>
-          {t.stream}
-          {isPlaying ? "ON" : "OFF"}
+        <span className={!isMuted ? "animate-pulse font-bold" : "opacity-30"}>
+          {t.stream} {!isMuted ? "ON" : "OFF"}
         </span>
       </div>
 
       <button
-        onClick={toggle}
+        onClick={toggleMute}
         className="p-2 border transition-all duration-300 hover:scale-110"
         style={{
-          borderColor: "var(--cyber-primary)",
-          backgroundColor: isLight
-            ? "rgba(0, 143, 17, 0.05)"
-            : "rgba(0, 255, 65, 0.05)",
+          borderColor: "var(--primary)",
+          color: "var(--primary)",
+          backgroundColor: "var(--primary-opacity)",
         }}
       >
-        {isPlaying ? <Volume2 size={16} /> : <VolumeX size={16} />}
+        {!isMuted ? <Volume2 size={16} /> : <VolumeX size={16} />}
       </button>
     </div>
   );
