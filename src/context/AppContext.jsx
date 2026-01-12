@@ -5,7 +5,7 @@ const AppContext = createContext();
 export const AppProvider = ({ children }) => {
   const [isLight, setIsLight] = useState(true);
   const [lang, setLang] = useState("FR");
-  const [isMuted, setIsMuted] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
 
   const toggleTheme = () => setIsLight(!isLight);
   const toggleLang = (l) => setLang(l);
