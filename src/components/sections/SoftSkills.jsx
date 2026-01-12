@@ -14,7 +14,7 @@ const content = {
       },
       {
         title: "Sang-Froid",
-        desc: "Malgré les urgences soudaines ou les imprévus ,je préfère agir de manière pragmatique  plutôt qu'avec  précipitation..",
+        desc: "Malgré les urgences soudaines ou les imprévus ,je préfère agir de manière pragmatique  plutôt qu'avec  précipitation.",
         icon: Zap,
       },
       {
@@ -24,7 +24,7 @@ const content = {
       },
       {
         title: "Curiosité naturelle",
-        desc: "Je suis assez motivé par l'envie d'apprendre de nouvelles choses . Que ce soit une nouvelle techno ou une culture différente, je cherche toujours l'étincelle qui booste la créativité",
+        desc: "Je suis assez motivé par l'envie d'apprendre de nouvelles choses . Que ce soit une nouvelle techno ou une culture différente, je cherche toujours l'étincelle qui booste la créativité.",
         icon: Brain,
       },
     ],
