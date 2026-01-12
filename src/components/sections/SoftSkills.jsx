@@ -5,7 +5,7 @@ import { useApp } from "../../context/AppContext"; // ✅ AJOUTÉ
 const content = {
   FR: {
     title: "Soft_Skills_Log",
-    subtitle: "// DERRIERE LA CYBER ET LE GEEK",
+    subtitle: "//DERRIERE LA CYBER ET LE GEEK",
     traits: [
       {
         title: "Écoute active",
@@ -62,17 +62,22 @@ export const SoftSkills = () => {
   const t = content[lang];
 
   return (
-    <section className="py-24 px-6 max-w-7xl mx-auto">
-      {/* Header DYNAMIQUE */}
+    <section className="py-24 px-6 max-w-7xl mx-auto overflow-hidden">
       <div className="flex flex-col md:flex-row md:items-end gap-4 mb-16 border-b border-white/10 pb-6">
-        <div className="flex items-center gap-4">
-          <Terminal className="w-8 h-8 text-cyber-primary" />
+        {/* Aligné en haut (items-start) pour que l'icône soit face au sous-titre sur mobile */}
+        <div className="flex items-start gap-3 md:gap-6">
+          {/* L'icône Terminal (>_) */}
+          {/*<Terminal className="w-8 h-8 md:w-12 md:h-12 text-cyber-primary shrink-0 mt-1" />*/}
+
           <div className="flex flex-col">
-            <h2 className="text-xs font-mono text-cyber-primary uppercase tracking-[0.3em] mb-1">
+            {/* Sous-titre : break-words pour éviter le décalage horizontal sur mobile */}
+            <h2 className="text-[10px] md:text-xs font-mono text-cyber-primary uppercase tracking-[0.2em] mb-1 break-words">
               {t.subtitle}
             </h2>
+
+            {/* Titre Principal */}
             <h2
-              className="section-title text-3xl md:text-5xl font-black uppercase tracking-tighter"
+              className="section-title text-3xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter leading-tight"
               style={{ color: "var(--text)" }}
             >
               {t.title}
