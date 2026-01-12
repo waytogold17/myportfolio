@@ -52,7 +52,7 @@ export const Certifications = () => {
   const t = content[lang] || content.FR;
 
   return (
-    <section id="certifications" className="py-24 px-6 max-w-7xl mx-auto">
+    <section id="certifications" className="py-16 px-6 max-w-7xl mx-auto">
       {/* Header avec ligne adaptative */}
       <div className="flex flex-col mb-12">
         {/* LE STATUS : Toujours en haut, prend toute la largeur */}

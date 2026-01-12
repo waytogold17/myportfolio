@@ -130,9 +130,9 @@ export const ProjectModule = () => {
   const t = content[lang] || content.FR;
 
   return (
-    <section id="projects" className="py-24 px-6 max-w-7xl mx-auto">
+    <section id="projects" className="py-16 px-6 max-w-7xl mx-auto">
       {/* HEADER SECTION */}
-      <div className="flex flex-col md:flex-row md:justify-between md:items-end mb-16 border-b border-white/10 pb-6 gap-6">
+      <div className="flex flex-col md:flex-row md:justify-between md:items-end mb-6 border-b border-white/10 pb-6 gap-6">
         <div>
           <h2 className="text-xs font-mono text-cyber-primary uppercase tracking-[0.3em] mb-2">
             {t.subtitle}

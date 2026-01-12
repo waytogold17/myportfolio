@@ -135,7 +135,7 @@ export const MobileMenu = () => {
                     style={{ color: menuColors.text }}
                   >
                     {isLight ? <Moon size={16} /> : <Sun size={16} />}
-                    {isLight ? "Dark" : "Light"}
+                    {isLight ? "Light" : "Dark"}
                   </button>
 
                   <div
@@ -149,7 +149,7 @@ export const MobileMenu = () => {
                     style={{ color: menuColors.text }}
                   >
                     <Globe size={14} />
-                    {lang === "FR" ? "EN" : "FR"}
+                    {lang === "EN" ? "EN" : "FR"}
                   </button>
                 </div>
               </div>

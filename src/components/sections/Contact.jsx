@@ -83,7 +83,7 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 px-4 max-w-4xl mx-auto">
+    <section id="contact" className="py-20 px-4 max-w-4xl mx-auto">
       <div
         className="border border-cyber-primary/20 p-6 md:p-8 relative overflow-hidden backdrop-blur-sm"
         style={{

@@ -109,15 +109,16 @@ const content = {
     ],
   },
 };
-
 export const Skills = () => {
   const { lang, isLight } = useApp();
   const t = content[lang] || content.FR;
 
   return (
-    <section id="skills" className="py-24 px-6 max-w-7xl mx-auto">
+    <section id="skills" className="py-16 px-6 max-w-7xl mx-auto">
       {/* Header dynamique */}
-      <div className="flex flex-col mb-16">
+      <div className="flex flex-col mb-12">
+        {" "}
+        {/* Réduit de mb-16 à mb-12 */}
         <h2 className="text-xs font-mono text-cyber-primary tracking-[0.5em] uppercase mb-4">
           {t.subtitle}
         </h2>
@@ -134,7 +135,7 @@ export const Skills = () => {
         {t.categories.map((cat) => (
           <div
             key={cat.id}
-            className="cyber-panel p-8 group transition-all duration-300"
+            className="cyber-panel p-8 group transition-all duration-300 hover:border-cyber-primary/50"
             style={{
               backgroundColor: isLight
                 ? "rgba(0,0,0,0.02)"
@@ -143,7 +144,7 @@ export const Skills = () => {
             }}
           >
             <div className="flex items-center gap-4 mb-8">
-              <cat.icon className="w-8 h-8 text-cyber-primary opacity-80" />
+              <cat.icon className="w-8 h-8 text-cyber-primary opacity-80 group-hover:scale-110 transition-transform" />
               <h3
                 className="text-xl font-bold uppercase tracking-tighter"
                 style={{ color: "var(--text)" }}
@@ -152,28 +153,46 @@ export const Skills = () => {
               </h3>
             </div>
 
-            <div className="space-y-6">
+            <div className="space-y-8">
+              {" "}
+              {/* Augmenté l'espace entre les blocs */}
               {cat.subskills.map((sub, i) => (
-                <div
-                  key={i}
-                  className="border-l-2 pl-4 transition-colors duration-300"
-                  style={{
-                    borderColor: isLight
-                      ? "rgba(0,0,0,0.1)"
-                      : "rgba(255,255,255,0.1)",
-                  }}
-                >
+                <div key={i} className="flex flex-col">
                   <div
-                    className="text-sm font-bold uppercase mb-1"
+                    className="text-[11px] font-black uppercase mb-3 tracking-widest flex items-center gap-2"
                     style={{ color: "var(--text)" }}
                   >
+                    <span className="w-1.5 h-1.5 bg-cyber-primary rounded-full"></span>
                     {sub.name}
                   </div>
-                  <div
-                    className="text-[10px] font-mono"
-                    style={{ color: "var(--text-muted)" }}
-                  >
-                    {sub.tools}
+
+                  {/* Surbrillance des outils via Flex-wrap et Badges */}
+                  {/* Surbrillance des outils via badges plus visibles */}
+                  <div className="flex flex-wrap gap-2">
+                    {sub.tools.split(", ").map((tool, idx) => (
+                      <span
+                        key={idx}
+                        className="text-[10px] font-mono px-2.5 py-1 rounded-full border bg-black/40
+                 group-hover:bg-cyber-primary/10 group-hover:border-cyber-primary/70
+                 hover:bg-cyber-primary hover:text-black hover:-translate-y-0.5
+                 transition-all duration-200"
+                        style={{
+                          backgroundColor: isLight
+                            ? "rgba(0,0,0,0.04)"
+                            : "rgba(0,0,0,0.6)",
+                          borderColor: isLight
+                            ? "rgba(0,0,0,0.35)"
+                            : "rgba(0,255,65,0.4)",
+                          color: isLight ? "#111827" : "#e5e7eb",
+                          boxShadow: isLight
+                            ? "0 0 0 0 rgba(0,255,65,0)"
+                            : "0 0 0 0 rgba(0,255,65,0)",
+                        }}
+                      >
+                        <span className="text-cyber-primary mr-1">#</span>
+                        {tool}
+                      </span>
+                    ))}
                   </div>
                 </div>
               ))}
@@ -184,7 +203,8 @@ export const Skills = () => {
 
       {/* Barre d'outils (Footer de section) */}
       <div
-        className="mt-16 p-4 border border-dashed flex flex-wrap gap-4 justify-center opacity-60"
+        className="mt-16 p-4 border border-dashed flex flex-wrap gap-3 justify-center
+             bg-black/10 rounded-lg"
         style={{ borderColor: "var(--border)" }}
       >
         {[
@@ -199,11 +219,11 @@ export const Skills = () => {
         ].map((tool) => (
           <span
             key={tool}
-            className="text-[10px] font-mono border px-3 py-1 italic transition-colors"
-            style={{
-              borderColor: "var(--border)",
-              color: "var(--text-muted)",
-            }}
+            className="text-[10px] font-mono px-3 py-1 rounded-full border
+                 bg-cyber-primary/5 text-cyber-primary
+                 hover:bg-cyber-primary hover:text-black hover:-translate-y-0.5
+                 transition-all duration-200"
+            style={{ borderColor: "var(--border)" }}
           >
             {tool}
           </span>

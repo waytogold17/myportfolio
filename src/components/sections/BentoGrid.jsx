@@ -30,7 +30,7 @@ const projects = [
 
 export const ProjectModule = () => {
   return (
-    <section className="py-20 px-6 max-w-7xl mx-auto">
+    <section className="py-16 px-6 max-w-7xl mx-auto">
       {/* Header technique style brutaliste */}
       <div className="flex justify-between items-end mb-12 border-b border-white/10 pb-4">
         <div>

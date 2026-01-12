@@ -69,7 +69,7 @@ export const WhoAmI = () => {
   const t = content[lang] || content.FR;
 
   return (
-    <section id="about" className="py-24 px-6 max-w-7xl mx-auto">
+    <section id="about" className="py-16 px-6 max-w-7xl mx-auto">
       <div className="grid grid-cols-12 gap-8">
         {/* COLONNE GAUCHE: IDENTITÉ */}
         <div className="col-span-12 md:col-span-4 space-y-6">

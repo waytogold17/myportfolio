@@ -9,13 +9,13 @@ const content = {
     values: [
       {
         number: "01",
-        title: "Ma Dualité Technique",
+        title: "Ma Pluralité Technique",
         text: "L'alliance du Réseau, du Développement et de la cybersécurité offensive pour accomplir des projets plus que complexes.",
       },
       {
         number: "02",
         title: "Mes passions quotidiennes",
-        text: "Le sport (précisement de la musculation) et la culture geek (mangas et animés) boostent mon imagination mais aussi ma maitrise de soi .",
+        text: "Le sport (précisement de la musculation) et la culture geek (mangas et animés) boostent mon imagination mais aussi ma maitrise de soi.",
       },
       {
         number: "03",
@@ -33,7 +33,7 @@ const content = {
     values: [
       {
         number: "01",
-        title: "Technical Duality",
+        title: "Technical Plurality",
         text: "Blending Network, Development and offensive Cybersecurity to achieve highly complex projects.",
       },
       {
@@ -98,7 +98,7 @@ export const Manifesto = () => {
   const t = content[lang] || content.FR;
 
   return (
-    <section id="whyme" className="py-32 relative overflow-hidden">
+    <section id="whyme" className="py-20 relative overflow-hidden">
       {/* Fond décoratif adaptatif */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(0,255,65,0.03)_0%,transparent_70%)] pointer-events-none" />
 

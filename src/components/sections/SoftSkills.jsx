@@ -24,7 +24,7 @@ const content = {
       },
       {
         title: "Curiosité naturelle",
-        desc: "Je suis assez motivé par l'envie d'apprendre de nouvelles choses . Que ce soit une nouvelle techno ou une culture différente, je cherche toujours l'étincelle qui booste la créativit",
+        desc: "Je suis assez motivé par l'envie d'apprendre de nouvelles choses . Que ce soit une nouvelle techno ou une culture différente, je cherche toujours l'étincelle qui booste la créativité",
         icon: Brain,
       },
     ],
@@ -62,7 +62,7 @@ export const SoftSkills = () => {
   const t = content[lang];
 
   return (
-    <section className="py-24 px-6 max-w-7xl mx-auto overflow-hidden">
+    <section className="py-16 px-6 max-w-7xl mx-auto overflow-hidden">
       <div className="flex flex-col md:flex-row md:items-end gap-4 mb-16 border-b border-white/10 pb-6">
         {/* Aligné en haut (items-start) pour que l'icône soit face au sous-titre sur mobile */}
         <div className="flex items-start gap-3 md:gap-6">

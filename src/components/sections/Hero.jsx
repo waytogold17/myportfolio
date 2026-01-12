@@ -25,7 +25,7 @@ export const Hero = () => {
   const t = content[lang];
 
   return (
-    <section className="min-h-screen flex flex-col justify-center px-6 md:px-10 pt-20">
+    <section className="min-h-screen flex flex-col justify-center px-6 md:px-10 pt-20 pb-10">
       <div className="mb-6">
         {/* On ajoute une clé unique basée sur la langue pour relancer l'animation au changement de langue */}
         <TerminalBoot key={lang} text={t.boot} delay={0.03} />
@@ -61,7 +61,7 @@ export const Hero = () => {
         </p>
       </div>
 
-      <div className="mt-12 md:mt-20 animate-bounce opacity-20">
+      <div className="mt-8 md:mt-10 animate-bounce opacity-20">
         <div
           className="w-[1px] h-12 bg-current mx-auto"
           style={{ backgroundColor: "var(--text)" }}

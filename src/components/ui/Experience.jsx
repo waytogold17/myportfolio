@@ -98,7 +98,7 @@ export const Experience = () => {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <section id="experiences" className="py-24 px-6 max-w-6xl mx-auto">
+    <section id="experiences" className="py-16 px-6 max-w-6xl mx-auto">
       {/* HEADER */}
       <div className="flex items-center gap-4 mb-12">
         <Terminal className="text-cyber-primary" />
