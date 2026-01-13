@@ -8,7 +8,7 @@ const content = {
     id: "// NOYAU_IDENTITÉ",
     name: "A PROPOS DE MOI",
     desc: "Étudiant en cybersécurité et expert dans des domaines ciblés , j'y trouve beaucoup de challenge . Entre CTF, hackatons , et proejts de recherches innovateurs il y a de tout. Je reste ouvert aux discussions , débats aux opportunités mais aussi à vos questions et conseils.",
-    status: "STATUT: DISPONIBLE",
+    status: "STATUT: DISPONIBLE A PARTIR D'OCTOBRE 2026",
     timelineTitle: "Parcours_Académique_log",
     timeline: [
       {
@@ -37,7 +37,7 @@ const content = {
     id: "// IDENTITY_CORE",
     name: "ABOUT ME",
     desc: "As a cybersecurity student and expert in specific fields, I find it very challenging. Between CTFs, hackathons, and innovative research projects, there's something for everyone. I'm open to discussions, debates, opportunities, and also your questions and advice.",
-    status: "STATUS: OPEN_TO_WORK",
+    status: "STATUS: AVAILABLE FROM OCTOBER 2026",
     timelineTitle: "Studies_log",
     timeline: [
       {
