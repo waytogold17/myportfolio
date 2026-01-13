@@ -9,14 +9,14 @@ const content = {
     title: "EXPERT",
     subtitle: "CYBER",
     name: "Joseph GOMEZ ",
-    desc: "Passionné par la cybersécurité et la technologie. Expertise ciblée en sécurité réseau, analyse malware et développement sécurisé.",
+    desc: "Je suis passionné par la cybersécurité et la technologie. J'ai de plus une expertise ciblée en sécurité réseau, analyse malware et développement sécurisé.",
   },
   EN: {
     boot: "Initializing onboarding protocol...",
     title: "CYBER",
     subtitle: "EXPERT",
     name: "Joseph GOMEZ ",
-    desc: "Cybersecurity and technology enthusiast. Focused expertise in network security, malware analysis, and secure development.",
+    desc: "I am passionate about cybersecurity and technology. I also have specialized expertise in network security, malware analysis, and secure development.",
   },
 };
 

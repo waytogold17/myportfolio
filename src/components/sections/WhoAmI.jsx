@@ -7,7 +7,7 @@ const content = {
   FR: {
     id: "// NOYAU_IDENTITÉ",
     name: "A PROPOS DE MOI",
-    desc: "Étudiant expert en Cybersécurité. Polyvalent, orienté réseau & développement.",
+    desc: "Étudiant en cybersécurité et expert dans des domaines ciblés , j'y trouve beaucoup de challenge . Entre CTF, hackatons , et proejts de recherches innovateurs il y a de tout. Je reste ouvert aux discussions , débats aux opportunités mais aussi à vos questions et conseils.",
     status: "STATUT: DISPONIBLE",
     timelineTitle: "Parcours_Académique_log",
     timeline: [
@@ -36,7 +36,7 @@ const content = {
   EN: {
     id: "// IDENTITY_CORE",
     name: "ABOUT ME",
-    desc: "Cybersecurity student expert. Versatile, network & development oriented.",
+    desc: "As a cybersecurity student and expert in specific fields, I find it very challenging. Between CTFs, hackathons, and innovative research projects, there's something for everyone. I'm open to discussions, debates, opportunities, and also your questions and advice.",
     status: "STATUS: OPEN_TO_WORK",
     timelineTitle: "Studies_log",
     timeline: [
@@ -112,10 +112,7 @@ export const WhoAmI = () => {
 
         {/* COLONNE DROITE: TIMELINE */}
         <div className="col-span-12 md:col-span-8 space-y-4">
-          <h2
-            className="section-title text-xs font-mono mb-10 uppercase tracking-[0.3em]"
-            style={{ color: "var(--text-muted)" }}
-          >
+          <h2 className="section-title  mb-10 uppercase tracking-[0.3em]">
             {t.timelineTitle}
           </h2>
 
