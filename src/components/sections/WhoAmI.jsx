@@ -7,7 +7,7 @@ const content = {
   FR: {
     id: "// NOYAU_IDENTITÉ",
     name: "A PROPOS DE MOI",
-    desc: "Étudiant en cybersécurité et expert dans des domaines ciblés , j'y trouve beaucoup de challenge . Entre CTF, hackatons , et proejts de recherches innovateurs il y a de tout. Je reste ouvert aux discussions , débats aux opportunités mais aussi à vos questions et conseils.",
+    desc: "Étudiant en cybersécurité et expert dans des domaines ciblés , j'y trouve beaucoup de challenge . Entre CTF, hackatons , et projets de recherches innovateurs il y a de tout. Je reste ouvert aux discussions , débats aux opportunités mais aussi à vos questions et conseils.",
     status: "STATUT: DISPONIBLE A PARTIR D'OCTOBRE 2026",
     timelineTitle: "Parcours_Académique_log",
     timeline: [
