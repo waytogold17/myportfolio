@@ -1,7 +1,6 @@
 import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { Send, Loader2, CheckCircle2, AlertCircle } from "lucide-react";
-import emailjs from "@emailjs/browser";
 import { useApp } from "../../context/AppContext";
 
 const content = {
@@ -37,7 +36,7 @@ export const Contact = () => {
   const [status, setStatus] = useState("idle"); // idle | sending | success | error
   const t = content[lang] || content.FR;
 
-  const sendEmail = (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
     setStatus("sending");
 
@@ -47,32 +46,30 @@ export const Contact = () => {
       timeStyle: "medium",
     });
 
-    const templateParams = {
-      user_name: formRef.current.user_name.value,
-      user_email: formRef.current.user_email.value,
-      message: formRef.current.message.value,
-      send_time: timestamp, // Voici ta variable horaire
-    };
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          user_name: formRef.current.user_name.value,
+          user_email: formRef.current.user_email.value,
+          message: formRef.current.message.value,
+          send_time: timestamp,
+        }),
+      });
 
-    emailjs
-      .send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        templateParams,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-      )
-      .then(
-        () => {
-          setStatus("success");
-          e.target.reset();
-          setTimeout(() => setStatus("idle"), 5000);
-        },
-        (error) => {
-          console.error(error);
-          setStatus("error");
-          setTimeout(() => setStatus("idle"), 5000);
-        }
-      );
+      if (res.ok) {
+        setStatus("success");
+        formRef.current.reset();
+        setTimeout(() => setStatus("idle"), 5000);
+      } else {
+        throw new Error("Server error");
+      }
+    } catch (err) {
+      console.error(err);
+      setStatus("error");
+      setTimeout(() => setStatus("idle"), 5000);
+    }
   };
 
   const inputStyle = {
