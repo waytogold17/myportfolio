@@ -22,16 +22,15 @@ export default async function handler(req, res) {
       }),
     });
 
-    const text = await response.text();
-
     if (!response.ok) {
+      const text = await response.text();
       console.error("EmailJS rejected:", response.status, text);
-      return res.status(500).json({ error: text, status: response.status });
+      throw new Error(text);
     }
 
     return res.status(200).json({ success: true });
   } catch (err) {
     console.error("EmailJS error:", err.message);
-    return res.status(500).json({ error: err.message });
+    return res.status(500).json({ error: "Failed to send email" });
   }
 }
