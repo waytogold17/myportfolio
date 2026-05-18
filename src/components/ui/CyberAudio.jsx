@@ -11,8 +11,7 @@ export const CyberAudio = () => {
   // On utilise isMuted et toggleMute du contexte global
   const { lang, isLight, isMuted, toggleMute } = useApp();
   const t = content[lang] || content.FR;
-  // Fichier audio à placer dans public/audio/ambient.mp3
-  const audioRef = useRef(new Audio("/audio/ambient.mp3"));
+  const audioRef = useRef(new Audio("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3"));
 
   useEffect(() => {
     const audio = audioRef.current;
