@@ -1,5 +1,5 @@
 import { Sun, Moon } from "lucide-react";
-import { useApp } from "../context/AppContext";
+import { useApp } from "../../context/AppContext";
 
 export const SettingsSwitch = () => {
   const { isLight, toggleTheme, lang, toggleLang } = useApp();

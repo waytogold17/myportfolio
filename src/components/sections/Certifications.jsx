@@ -11,6 +11,7 @@ const certData = [
     level: { FR: "ASSOCIÉ", EN: "ASSOCIATE" },
     status: { FR: "VÉRIFIÉ", EN: "VERIFIED" },
     color: "from-blue-500/20",
+    href: "#credly-link-todo",
   },
   {
     title: "CCNA 3: ENSA",
@@ -18,6 +19,7 @@ const certData = [
     level: { FR: "RÉSEAU ENTREPRISE", EN: "ENTERPRISE NETWORKING" },
     status: { FR: "VÉRIFIÉ", EN: "VERIFIED" },
     color: "from-blue-600/20",
+    href: "#credly-link-todo",
   },
   {
     title: "Ethical Hacking",
@@ -25,6 +27,7 @@ const certData = [
     level: { FR: "OFFENSIF", EN: "OFFENSIVE" },
     status: { FR: "VÉRIFIÉ", EN: "VERIFIED" },
     color: "from-green-500/20",
+    href: "#credly-link-todo",
   },
   {
     title: "Cybersecurity Threat Mgmt",
@@ -32,6 +35,7 @@ const certData = [
     level: { FR: "DÉFENSIF", EN: "DEFENSIVE" },
     status: { FR: "VÉRIFIÉ", EN: "VERIFIED" },
     color: "from-red-500/20",
+    href: "#credly-link-todo",
   },
   {
     title: "Junior Pentester Path",
@@ -39,6 +43,7 @@ const certData = [
     level: { FR: "PENTESTER", EN: "PENETRATION TESTER" },
     status: { FR: "TERMINÉ", EN: "COMPLETED" },
     color: "from-red-600/20",
+    href: "#credly-link-todo",
   },
 ];
 
@@ -126,11 +131,19 @@ export const Certifications = () => {
                 >
                   ID_STATUS: {cert.status[lang]}
                 </span>
-                <ExternalLink
-                  size={12}
-                  style={{ color: "var(--text-muted)" }}
-                  className="group-hover:text-cyber-primary transition-colors"
-                />
+                <a
+                  href={cert.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  aria-label={`Voir le badge ${cert.title}`}
+                >
+                  <ExternalLink
+                    size={12}
+                    style={{ color: "var(--text-muted)" }}
+                    className="group-hover:text-cyber-primary transition-colors"
+                  />
+                </a>
               </div>
             </div>
 

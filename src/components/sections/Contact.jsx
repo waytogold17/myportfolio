@@ -54,13 +54,12 @@ export const Contact = () => {
       send_time: timestamp, // Voici ta variable horaire
     };
 
-    // REMPLACE CES 3 VALEURS PAR LES TIENNES
     emailjs
       .send(
-        "service_vew5s87",
-        "template_lebje9s",
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         templateParams,
-        "4iO1bv8J6SkpQbz66"
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       )
       .then(
         () => {

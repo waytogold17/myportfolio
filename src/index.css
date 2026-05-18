@@ -74,12 +74,12 @@ body {
   color: var(--text);
 }
 
-/* Texture de bruit adaptative */
+/* Texture de bruit adaptative — fichier à placer dans public/textures/noise.png */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+  background-image: url("/textures/noise.png");
   opacity: 0.04;
   pointer-events: none;
   filter: contrast(150%) brightness(100%);

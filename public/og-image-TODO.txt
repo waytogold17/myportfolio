@@ -1,0 +1,2 @@
+Créer une image 1200x630px avec nom + rôle + logo pour l'Open Graph.
+La nommer og-image.png et la placer dans ce dossier (public/).

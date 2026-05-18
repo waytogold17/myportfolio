@@ -1,17 +1,20 @@
 import { motion } from "framer-motion";
 import {
   ShieldAlert,
+  ShieldCheck,
   Terminal,
   Cpu,
   FileSearch,
   Code,
   Database,
   Download,
+  ExternalLink,
 } from "lucide-react";
 import { useApp } from "../../context/AppContext";
 
 // 1. Dictionnaire d'icônes pour garder le contenu propre
 const projectIcons = {
+  "K-01":  <ShieldCheck className="text-cyber-primary" />,
   "PRJ-01": <ShieldAlert className="text-red-500" />,
   "PRJ-02": <Terminal className="text-cyber-primary" />,
   "PRJ-03": <Code className="text-blue-400" />,
@@ -28,6 +31,14 @@ const content = {
     archive:
       "-- ACCÉDER À L'ARCHIVE COMPLÈTE EN CLIQUANT SUR LE BOUTON CI DESSUS  --",
     projects: [
+      {
+        id: "K-01",
+        category: "GRC / SAAS",
+        title: "K-SHIELD",
+        desc: "Plateforme GRC SaaS multi-tenant — DORA · NIS2 · GDPR · ISO 27001. Analyse SAST (Semgrep), SCA (Trivy), détection secrets (Gitleaks), assistant RSSI IA (Gemini 2.0 Flash + Claude Sonnet), modélisation STRIDE, scoring risque prédictif (NVD/ENISA) et rapports NIS2 automatisés.",
+        tech: ["React", "FastAPI", "PostgreSQL", "Clerk", "Semgrep", "Trivy", "Gemini API"],
+        link: "https://k-shield.fr",
+      },
       {
         id: "PRJ-01",
         category: "OFFSEC",
@@ -78,6 +89,14 @@ const content = {
     btn: "DOWNLOAD_COMPLETE_PROJECTS_PRESENTATION_PDF",
     archive: "-- ACCESS FULL ARCHIVE --",
     projects: [
+      {
+        id: "K-01",
+        category: "GRC / SAAS",
+        title: "K-SHIELD",
+        desc: "Multi-tenant GRC SaaS platform — DORA · NIS2 · GDPR · ISO 27001. SAST (Semgrep), SCA (Trivy), secrets detection (Gitleaks), AI CISO assistant (Gemini 2.0 Flash + Claude Sonnet), STRIDE modeling, predictive risk scoring (NVD/ENISA) and automated NIS2 reports.",
+        tech: ["React", "FastAPI", "PostgreSQL", "Clerk", "Semgrep", "Trivy", "Gemini API"],
+        link: "https://k-shield.fr",
+      },
       {
         id: "PRJ-01",
         category: "OFFSEC",
@@ -193,6 +212,18 @@ export const ProjectModule = () => {
                 </span>
               ))}
             </div>
+
+            {prj.link && (
+              <a
+                href={prj.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 flex items-center gap-1 text-[10px] font-mono font-black uppercase tracking-widest text-cyber-primary hover:opacity-70 transition-opacity"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <ExternalLink size={11} /> Live
+              </a>
+            )}
           </motion.div>
         ))}
       </div>
